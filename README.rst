@@ -69,6 +69,12 @@ You can create a calendar of the current month, for instance as a PNG image:
 
   remarkable-calendar-creator calendar.png
 
+You can also create a calendar for a specific month:
+
+.. code-block:: console
+
+  remarkable-calendar-creator calendar.png 1 2021
+
 Or a calendar with all months of the current year on one sheet in a PNG file:
 
 .. code-block:: console
@@ -81,7 +87,7 @@ Or you can create a PDF with a page for every monthly calendar of 2021:
 
   remarkable-calendar-creator calendar.pdf 2021
 
-You can find the result of the above three commands for all months of 2021 in the `examples <https://github.com/koenvervloesem/remarkable-calendar-creator/tree/main/examples>`_ directory.
+You can find generated PNG and PDF files for all months of 2021 in the `examples <https://github.com/koenvervloesem/remarkable-calendar-creator/tree/main/examples>`_ directory.
 
 *************
 Configuration
