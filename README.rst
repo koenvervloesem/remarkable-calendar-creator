@@ -87,7 +87,9 @@ Or you can create a PDF with a page for every monthly calendar of 2021:
 
   remarkable-calendar-creator calendar.pdf 2021
 
-You can find generated PNG and PDF files for all months of 2021 in the `examples <https://github.com/koenvervloesem/remarkable-calendar-creator/tree/main/examples>`_ directory.
+For portrait mode, add the option ``-p`` after the file name.
+
+You can find generated PNG and PDF files for all months of 2021 for landscape and portrait mode in the `examples <https://github.com/koenvervloesem/remarkable-calendar-creator/tree/main/examples>`_ directory.
 
 *************
 Configuration
