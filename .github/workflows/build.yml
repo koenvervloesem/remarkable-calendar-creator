@@ -1,15 +1,7 @@
 ---
 name: Build
 
-on:
-  pull_request:
-    paths:
-      - '.github/workflows/**'
-      - '*.sh'
-  push:
-    paths:
-      - '.github/workflows/**'
-      - '*.sh'
+on: [push, pull_request]
 
 jobs:
   test:
