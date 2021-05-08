@@ -81,13 +81,13 @@ Or you can create a PDF with a page for every monthly calendar of 2021:
 
   remarkable-calendar-creator calendar.pdf 2021
 
-You can find the result of the above three commands in May 2021 in the examples directory.
+You can find the result of the above three commands in May 2021 in the `examples <https://github.com/koenvervloesem/remarkable-calendar-creator/tree/main/examples>`_ directory.
 
 *************
 Configuration
 *************
 
-You can find the default configuration for pcal and GhostScript in ``remarkable-calendar-creator.env``. If you want to override this configuration, export particular environment variables. Moreover, every argument for ``remarkable-calendar-creator`` that you add after the filename is forwarded to ``pcal``.
+You can find the default configuration for pcal and GhostScript in `remarkable-calendar-creator.env <https://github.com/koenvervloesem/remarkable-calendar-creator/blob/main/remarkable-calendar-creator.env>`_. If you want to override this configuration, export particular environment variables. Moreover, every argument for ``remarkable-calendar-creator`` that you add after the filename is forwarded to ``pcal``.
 
 Especially pcal has a lot of possible customizations. For instance you can add moon phases or custom images. You can even include a data file with events shown on the calendar, such as holidays or birthdays. Have a look at ``man pcal`` for all possibilities.
 
