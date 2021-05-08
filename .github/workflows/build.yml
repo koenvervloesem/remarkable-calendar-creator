@@ -1,0 +1,23 @@
+---
+name: Build
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+      - '*.sh'
+  push:
+    paths:
+      - '.github/workflows/**'
+      - '*.sh'
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Install dev requirements
+        run: sudo apt install python3-bashate shellcheck yamllint
+      - name: Check code
+        run: make check

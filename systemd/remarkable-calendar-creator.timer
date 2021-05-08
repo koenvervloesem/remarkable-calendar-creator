@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer to generate a splash screen with a calendar
+Requires=remarkable-calendar-creator.service
+
+[Timer]
+Unit=remarkable-calendar-creator.service
+OnCalendar=*-*-* 00:00:00
+
+[Install]
+WantedBy=timers.target

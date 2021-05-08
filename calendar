@@ -1,0 +1,4 @@
+# Calendar file for pcal. See pcal's man page for the syntax
+
+# Display the week number (i.e. 1-52) on every Monday
+all monday in all       %w

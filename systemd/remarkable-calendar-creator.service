@@ -1,0 +1,12 @@
+[Unit]
+Description=Generate a splash screen with a calendar
+Wants=remarkable-calendar-creator.timer
+
+[Service]
+Type=oneshot
+ExecStart=/opt/bin/remarkable-calendar-creator "$SPLASH_SCREEN"
+ExecStartPost=/bin/systemctl restart xochitl.service
+EnvironmentFile=/opt/etc/remarkable-calendar-creator/remarkable-calendar-creator.env
+
+[Install]
+WantedBy=multi-user.target
