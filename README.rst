@@ -31,13 +31,13 @@ The reMarkable Calendar Creator is essentially a light wrapper around `pcal <htt
 
 .. code-block:: console
 
-  $ sudo apt install pcal ghostscript
+  sudo apt install pcal ghostscript
 
 You can also install both programs on your reMarkable, after you have installed `Toltec <https://toltec-dev.org/>`_:
 
 .. code-block:: console
 
-  reMarkable: ~/ opkg install pcal ghostscript
+  opkg install pcal ghostscript
 
 *******************************
 Installation on your reMarkable
@@ -47,14 +47,17 @@ You can just run the shell script as ``remarkable-calendar-creator.sh``, or you 
 
 .. code-block:: console
 
-  reMarkable: ~/ git clone https://github.com/koenvervloesem/remarkable-calendar-creator.git
-  reMarkable: ~/ make install
+  opkg install coreutils-install column make
+  wget https://github.com/koenvervloesem/remarkable-calendar-creator/archive/refs/heads/main.zip
+  unzip main.zip
+  cd remarkable-calendar-creator-main
+  make install
 
 This installs the binary in ``/opt/bin``, as well as a systemd script and timer that replaces your splash screen ``/usr/share/remarkable/suspended.png`` every day with a calendar. If you want to change the type of calendar, change the environment variables in ``/opt/etc/remarkable-calendar-creator/remarkable-calendar-creator.env``.
 
 .. note::
 
-  The ``make install`` command makes a backup of your original splash screen in ``/opt/etc/remarkable-calendar-creator/suspended.png.backup``.
+  The ``make install`` command makes a backup of your original splash screen in ``/opt/etc/remarkable-calendar-creator/suspended.png.backup``, which is copied back when you run ``make uninstall``.
 
 *****
 Usage
@@ -64,19 +67,19 @@ You can create a calendar of the current month, for instance as a PNG image:
 
 .. code-block:: console
 
-  $ remarkable-calendar-creator calendar.png
+  remarkable-calendar-creator calendar.png
 
 Or a calendar with all months of the current year on one sheet in a PNG file:
 
 .. code-block:: console
 
-  $ remarkable-calendar-creator calendar.png -w
+  remarkable-calendar-creator calendar.png -w
 
 Or you can create a PDF with a page for every monthly calendar of 2021:
 
 .. code-block:: console
 
-  $ remarkable-calendar-creator calendar.pdf 2021
+  remarkable-calendar-creator calendar.pdf 2021
 
 You can find the result of the above three commands in May 2021 in the examples directory.
 
