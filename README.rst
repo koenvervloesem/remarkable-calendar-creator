@@ -57,7 +57,7 @@ This installs the binary in ``/opt/bin``, as well as a systemd script and timer 
 
 .. note::
 
-  The ``make install`` command makes a backup of your original splash screen in ``/opt/etc/remarkable-calendar-creator/suspended.png.backup``, which is copied back when you run ``make uninstall``.
+  The ``make install`` command makes a backup of your original splash screen to ``/opt/etc/remarkable-calendar-creator/suspended.png.backup``, which is copied back when you run ``make uninstall``.
 
 *****
 Usage
@@ -97,7 +97,7 @@ Configuration
 
 You can find the default configuration for pcal and GhostScript in `remarkable-calendar-creator.env <https://github.com/koenvervloesem/remarkable-calendar-creator/blob/main/remarkable-calendar-creator.env>`_. If you want to override this configuration, export particular environment variables. Moreover, every argument for ``remarkable-calendar-creator`` that you add after the filename is forwarded to ``pcal``.
 
-Especially pcal has a lot of possible customizations. For instance you can add moon phases or custom images. You can even include a data file with events shown on the calendar, such as holidays or birthdays. Have a look at ``man pcal`` for all possibilities.
+Especially pcal has a lot of possible customizations. For instance you can add moon phases or custom images. You can even include a data file (in `calendar <https://github.com/koenvervloesem/remarkable-calendar-creator/blob/main/calendar>`_) with events shown on the calendar, such as holidays or birthdays. Have a look at ``man pcal`` for all possibilities.
 
 **********
 Disclaimer
