@@ -49,7 +49,7 @@ You can just run the shell script as ``remarkable-calendar-creator.sh``, or you 
 
 .. code-block:: console
 
-  opkg install coreutils-install column make
+  opkg install coreutils-date coreutils-install column make
   wget https://github.com/koenvervloesem/remarkable-calendar-creator/archive/refs/heads/main.zip
   unzip main.zip
   cd remarkable-calendar-creator-main

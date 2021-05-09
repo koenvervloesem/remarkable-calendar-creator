@@ -3,6 +3,7 @@
 
 CREATOR_NAME=remarkable-calendar-creator
 DOWNLOADER_NAME=remarkable-calendar-downloader
+ICAL2PCAL=ical2pcal
 
 check: ## Check code
 	@echo "Checking code..."
@@ -20,6 +21,7 @@ install: ## Install remarkable-calendar-creator on your reMarkable
 	@echo "Installing $(CREATOR_NAME)..."
 	install -D -m 755 $(CREATOR_NAME).sh /opt/bin/$(CREATOR_NAME)
 	install -D -m 755 $(DOWNLOADER_NAME).sh /opt/bin/$(DOWNLOADER_NAME)
+	install -D -m 755 $(ICAL2PCAL).sh /opt/bin/$(ICAL2PCAL)
 	install -D -m 644 -t /opt/etc/$(CREATOR_NAME) $(CREATOR_NAME).env calendar
 	install -D -m 644 /usr/share/remarkable/suspended.png /opt/etc/$(CREATOR_NAME)/suspended.png.backup
 	install -D -m 644 -t /etc/systemd/system systemd/*
@@ -29,7 +31,7 @@ install: ## Install remarkable-calendar-creator on your reMarkable
 
 uninstall: ## Uninstall remarkable-calendar-creator on your reMarkable
 	@echo "Uninstalling $(CREATOR_NAME)..."
-	rm /opt/bin/$(CREATOR_NAME) /opt/bin/$(DOWNLOADER_NAME)
+	rm /opt/bin/$(CREATOR_NAME) /opt/bin/$(DOWNLOADER_NAME) /opt/bin/$(ICAL2PCAL)
 	install -D -m 644 /opt/etc/$(CREATOR_NAME)/suspended.png.backup /usr/share/remarkable/suspended.png
 	systemctl disable --now remarkable-calendar-creator.timer
 	rm /etc/systemd/system/remarkable-calendar-creator.*
