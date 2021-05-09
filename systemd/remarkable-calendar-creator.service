@@ -4,6 +4,7 @@ Wants=remarkable-calendar-creator.timer
 
 [Service]
 Type=oneshot
+ExecStartPre=/bin/bash -c 'PATH=/opt/bin:$PATH exec [[ -v "$ICS_URL" ]]; /opt/bin/remarkable-calendar-downloader "$ICS_URL"'
 ExecStart=/bin/bash -c 'PATH=/opt/bin:$PATH exec /opt/bin/remarkable-calendar-creator "$SPLASH_SCREEN"'
 ExecStartPost=/bin/systemctl restart xochitl.service
 EnvironmentFile=/opt/etc/remarkable-calendar-creator/remarkable-calendar-creator.env

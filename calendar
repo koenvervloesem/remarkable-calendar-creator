@@ -2,3 +2,5 @@
 
 # Display the week number (i.e. 1-52) on every Monday
 all monday in all       %w
+
+include? events

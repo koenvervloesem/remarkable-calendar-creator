@@ -1,12 +1,13 @@
 # Copyright (c) 2021 Koen Vervloesem
 # SPDX-License-Identifier: MIT
 
-PROJECT_NAME=remarkable-calendar-creator
+CREATOR_NAME=remarkable-calendar-creator
+DOWNLOADER_NAME=remarkable-calendar-downloader
 
 check: ## Check code
 	@echo "Checking code..."
-	bashate $(PROJECT_NAME).sh
-	shellcheck $(PROJECT_NAME).sh
+	bashate remarkable-calendar-*.sh
+	shellcheck remarkable-calendar-*.sh
 	yamllint .
 
 help: ## Show this help message
@@ -16,19 +17,20 @@ help: ## Show this help message
 	| column -t -s ':'
 
 install: ## Install remarkable-calendar-creator on your reMarkable
-	@echo "Installing $(PROJECT_NAME)..."
-	install -D -m 755 $(PROJECT_NAME).sh /opt/bin/$(PROJECT_NAME)
-	install -D -m 644 -t /opt/etc/$(PROJECT_NAME) $(PROJECT_NAME).env calendar
-	install -D -m 644 /usr/share/remarkable/suspended.png /opt/etc/$(PROJECT_NAME)/suspended.png.backup
+	@echo "Installing $(CREATOR_NAME)..."
+	install -D -m 755 $(CREATOR_NAME).sh /opt/bin/$(CREATOR_NAME)
+	install -D -m 755 $(DOWNLOADER_NAME).sh /opt/bin/$(DOWNLOADER_NAME)
+	install -D -m 644 -t /opt/etc/$(CREATOR_NAME) $(CREATOR_NAME).env calendar
+	install -D -m 644 /usr/share/remarkable/suspended.png /opt/etc/$(CREATOR_NAME)/suspended.png.backup
 	install -D -m 644 -t /etc/systemd/system systemd/*
 	systemctl daemon-reload
-	systemctl start $(PROJECT_NAME).service
-	systemctl enable $(PROJECT_NAME).timer
+	systemctl start $(CREATOR_NAME).service
+	systemctl enable $(CREATOR_NAME).timer
 
 uninstall: ## Uninstall remarkable-calendar-creator on your reMarkable
-	@echo "Uninstalling $(PROJECT_NAME)..."
-	rm /opt/bin/$(PROJECT_NAME)
-	install -D -m 644 /opt/etc/$(PROJECT_NAME)/suspended.png.backup /usr/share/remarkable/suspended.png
+	@echo "Uninstalling $(CREATOR_NAME)..."
+	rm /opt/bin/$(CREATOR_NAME) /opt/bin/$(DOWNLOADER_NAME)
+	install -D -m 644 /opt/etc/$(CREATOR_NAME)/suspended.png.backup /usr/share/remarkable/suspended.png
 	systemctl disable --now remarkable-calendar-creator.timer
 	rm /etc/systemd/system/remarkable-calendar-creator.*
 	systemctl daemon-reload

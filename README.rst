@@ -23,6 +23,8 @@ This tool creates calendars to display on a reMarkable device. You can create:
 - a PNG image to use instead of the default suspend screen (in ``/usr/share/remarkable/suspended.png``)
 - a PDF document to write your notes on
 
+You can also add events from an iCalendar (ics) file to your calendar.
+
 ************
 Requirements
 ************
@@ -91,6 +93,20 @@ For portrait mode, add the option ``-p`` after the file name.
 
 You can find generated PNG and PDF files for all months of 2021 for landscape and portrait mode in the `examples <https://github.com/koenvervloesem/remarkable-calendar-creator/tree/main/examples>`_ directory.
 
+**********************
+Adding calendar events
+**********************
+
+If you want to add events from your calendar, you first have to download an ICS file for your calendar and convert it to the pcal format that reMarkable Calendar Creator uses. This goes like this:
+
+.. code-block:: console
+
+  remarkable-calendar-downloader URL events
+
+The ``URL`` should be a publicly accessible but secret address of the ICS file of your iCalendar calendar. The ``events`` is the filename of the calendar file that reMarkable Calendar Creator uses by default.
+
+After this, run ``remarkable-calendar-creator`` again and it will automatically pick up your events and put them on your calendar. This only works for month calendars, as there's not enough room on the year calendar to add events.
+
 *************
 Configuration
 *************
@@ -112,3 +128,5 @@ License
 *******
 
 This project is provided by `Koen Vervloesem <http://koen.vervloesem.eu>`_ as open source software with the MIT license. See the `LICENSE file <LICENSE>`_ for more information.
+
+The file `ical2pcal.sh <https://github.com/koenvervloesem/remarkable-calendar-creator/blob/main/ical2pcal.sh>`_ comes from the MIT licensed `ical2pcal <https://github.com/pmarin/ical2pcal>`_ project by Francisco José Marín Pérez.
