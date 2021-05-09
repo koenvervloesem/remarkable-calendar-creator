@@ -107,6 +107,12 @@ The ``URL`` should be a publicly accessible but secret address of the ICS file o
 
 After this, run ``remarkable-calendar-creator`` again and it will automatically pick up your events and put them on your calendar. This only works for month calendars, as there's not enough room on the year calendar to add events.
 
+If you have installed reMarkable Calendar Creator on your reMarkable, just enter the URL of your ICS file (this should be a publicly accessible but secret URL for your calendar) in the `remarkable-calendar-creator.env`_ file. This should be something like ``ICS_URL=https://www.google.com/calendar/ical/feestdagenbelgie%40gmail.com/public/basic.ics`` (an example for Google's calendar file for the Belgian public holidays). After this, the systemd timer downloads this file daily and updates your calendar suspend screen. If you want to see the result immediately, run the systemd script manually with:
+
+.. code-block:: console
+
+  systemctl start remarkable-calendar-creator.service
+
 *************
 Configuration
 *************
