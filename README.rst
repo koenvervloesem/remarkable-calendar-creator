@@ -105,9 +105,11 @@ If you want to add events from your calendar, you first have to download an ICS 
 
 The ``URL`` should be a publicly accessible but secret address of the ICS file of your iCalendar calendar. The ``events`` is the filename of the calendar file that reMarkable Calendar Creator uses by default.
 
-After this, run ``remarkable-calendar-creator`` again and it will automatically pick up your events and put them on your calendar. This only works for month calendars, as there's not enough room on the year calendar to add events.
+After this, run ``remarkable-calendar-creator`` again and it will automatically pick up your events and put them on your calendar. Have a look at the `example with Belgian public holidays <https://github.com/koenvervloesem/remarkable-calendar-creator/blob/main/examples/public-holidays-belgium.png>`_ for the result.
 
-If you have installed reMarkable Calendar Creator on your reMarkable, just enter the URL of your ICS file (this should be a publicly accessible but secret URL for your calendar) in the `remarkable-calendar-creator.env`_ file. This should be something like ``ICS_URL=https://www.google.com/calendar/ical/feestdagenbelgie%40gmail.com/public/basic.ics`` (an example for Google's calendar file for the Belgian public holidays). After this, the systemd timer downloads this file daily and updates your calendar suspend screen. If you want to see the result immediately, run the systemd script manually with:
+This only works for month calendars, as there's not enough room on the year calendar to add events.
+
+If you have installed reMarkable Calendar Creator on your reMarkable, just enter the URL of your ICS file in the `remarkable-calendar-creator.env`_ file. This should be something like ``ICS_URL=https://www.google.com/calendar/ical/feestdagenbelgie%40gmail.com/public/basic.ics`` (an example for Google's calendar file for the Belgian public holidays). After this, the systemd timer downloads this file daily and updates your calendar suspend screen. If you want to see the result immediately, run the systemd script manually with:
 
 .. code-block:: console
 
