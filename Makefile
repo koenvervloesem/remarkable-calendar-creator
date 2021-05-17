@@ -22,7 +22,7 @@ install: ## Install remarkable-calendar-creator on your reMarkable
 	install -D -m 755 $(CREATOR_NAME).sh /opt/bin/$(CREATOR_NAME)
 	install -D -m 755 $(DOWNLOADER_NAME).sh /opt/bin/$(DOWNLOADER_NAME)
 	install -D -m 755 $(ICAL2PCAL).sh /opt/bin/$(ICAL2PCAL)
-	install -D -m 644 -t /opt/etc/$(CREATOR_NAME) $(CREATOR_NAME).env calendar
+	install -D -m 644 -t /opt/etc/$(CREATOR_NAME) $(CREATOR_NAME).env.example calendar
 	install -D -m 644 /usr/share/remarkable/suspended.png /opt/etc/$(CREATOR_NAME)/suspended.png.backup
 	install -D -m 644 -t /etc/systemd/system systemd/*
 	systemctl daemon-reload
