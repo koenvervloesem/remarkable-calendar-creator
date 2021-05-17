@@ -55,7 +55,15 @@ You can just run the shell script as ``remarkable-calendar-creator.sh``, or you 
   cd remarkable-calendar-creator-main
   make install
 
-This installs the binary in ``/opt/bin``, as well as a systemd script and timer that replaces your splash screen ``/usr/share/remarkable/suspended.png`` every day with a calendar of the current month. If you want to change the type of calendar, change the environment variables in ``/opt/etc/remarkable-calendar-creator/remarkable-calendar-creator.env``.
+This installs the binary in ``/opt/bin``, as well as a systemd script and timer that replaces your splash screen ``/usr/share/remarkable/suspended.png`` every day with a calendar of the current month.
+
+Then copy the example environment file:
+
+.. code-block:: console
+
+  cp /opt/etc/remarkable-calendar-creator/remarkable-calendar-creator.env.example /opt/etc/remarkable-calendar-creator/remarkable-calendar-creator.env
+
+If you want to change the type of calendar or other options, change the environment variables in ``/opt/etc/remarkable-calendar-creator/remarkable-calendar-creator.env``.
 
 .. note::
 
