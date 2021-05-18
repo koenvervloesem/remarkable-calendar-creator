@@ -2,7 +2,7 @@
 reMarkable Calendar Creator
 ###########################
 
-.. image:: https://github.com/koenvervloesem/remarkable-calendar-creator/workflows/Build/badge.svg
+.. image:: https://github.com/koenvervloesem/remarkable-calendar-creator/workflows/Tests/badge.svg
    :target: https://github.com/koenvervloesem/remarkable-calendar-creator/actions
    :alt: Continuous integration
 
