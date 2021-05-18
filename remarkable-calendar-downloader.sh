@@ -33,4 +33,5 @@ fi
 
 # Download file and convert it to pcal format
 wget "$url" --output-document "$output_file".ics
+# shellcheck disable=SC2086 # Don't quote the -E option
 $ICAL2PCAL $ICAL2PCAL_OPTS -o "$output_file" "$output_file".ics
