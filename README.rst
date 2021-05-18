@@ -63,7 +63,7 @@ Especially pcal has a lot of possible customizations. For instance you can add m
 Adding calendar events
 **********************
 
-If you want to add events from your own calendar, just enter the URL of your ICS file in the file `/opt/etc/remarkable-calendar-creator/remarkable-calendar-creator.env`_. This should be something like ``ICS_URL=https://www.google.com/calendar/ical/feestdagenbelgie%40gmail.com/public/basic.ics`` (an example for Google's calendar file for the Belgian public holidays). Note that ``ICS_URL`` should be a publicly accessible but secret address of the ICS file of your iCalendar calendar. Make sure to remove the ``#`` before ``ICS_URL`` in the configuration file.
+If you want to add events from your own calendar, just enter the URL of your ICS file in the file ``/opt/etc/remarkable-calendar-creator/remarkable-calendar-creator.env``. This should be something like ``ICS_URL=https://www.google.com/calendar/ical/feestdagenbelgie%40gmail.com/public/basic.ics`` (an example for Google's calendar file for the Belgian public holidays). Note that ``ICS_URL`` should be a publicly accessible but secret address of the ICS file of your iCalendar calendar. Make sure to remove the ``#`` before ``ICS_URL`` in the configuration file.
 
 After this, the systemd timer downloads this file daily and updates your calendar suspend screen. If you want to see the result immediately, run the systemd script manually with:
 
